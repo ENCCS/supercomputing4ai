@@ -1,13 +1,20 @@
-LESSON NAME
-===========
+Introduction to supercomputing for AI
+=====================================
 
-Intro
+High performance computing (HPC) resources can be used to accelerate AI workflows. The EuroHPC Joint Undertaking (JU) offers
+free access to such resources to SMEs as well as larger companies. In this course, you will learn:
+
+* What is an HPC resource and how it is different from a cloud environment;
+* What are the available HPC resources through the EuroHPC JU;
+* How to connect to a cluster and explore resources;
+* How to run an example workflow.
 
 
 
 .. prereq::
 
-   prerequisites
+   You will need to have credentials to access the `PDC <https://www.pdc.kth.se/>`__ cluster. A working SSH client is needed: 
+   it is included on macOS and most Linux flavours; it is also available on Windows in the Powershell or under the `Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/install>`__.
 
 
 
@@ -15,12 +22,27 @@ Intro
    :widths: auto
    :delim: ;
 
-   20 min ; :doc:`filename`
+   20 min ; :doc:`supercomputer`
+   20 min ; :doc:`why_cluster`
+   20 min ; :doc:`eurohpc`
+   20 min ; :doc:`connect_to_cluster`
+   20 min ; :doc:`folders_and_transfer`
+   20 min ; :doc:`software_modules`
+   20 min ; :doc:`sbatch_jupyter`
 
 
 .. toctree::
    :maxdepth: 1
    :caption: The lesson
+
+   supercomputer
+   why_cluster
+   eurohpc
+   connect_to_cluster
+   folders_and_transfer
+   software_modules
+   sbatch_jupyter
+
 
 
 .. toctree::
@@ -28,15 +50,20 @@ Intro
    :caption: Reference
 
    quick-reference
+
    guide
 
 
 
 .. _learner-personas:
 
+
 Who is the course for?
 ----------------------
 
+This course is intended for data scientists that want to take advantage of higher computing power to perform their workflows.
+Some degree of familiarity with a command-line shell is recommended, but no expertise is required. No previous knowledge of 
+supercomputing environments is required.
 
 
 
@@ -52,7 +79,8 @@ About the course
 See also
 --------
 
-
+Further introductory material can be found on the `Introduction to LUMI <https://lumi-supercomputer.github.io/lumi-self-learning/>`__ and 
+`HPC carpentry <https://carpentries-incubator.github.io/hpc-intro/>`__ pages. 
 
 
 

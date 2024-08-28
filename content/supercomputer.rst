@@ -1,0 +1,5 @@
+What is a supercomputer?
+============================
+
+The usual stuff of login node and compute nodes, interconnect, parallel file system, accelerators, scheduling, etc 
+HPC vs cloud

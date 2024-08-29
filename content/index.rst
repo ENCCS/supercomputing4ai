@@ -2,7 +2,7 @@ Introduction to supercomputing for AI
 =====================================
 
 High performance computing (HPC) resources can be used to accelerate AI workflows. The EuroHPC Joint Undertaking (JU) offers
-free access to such resources to SMEs as well as larger companies. In this course, you will learn:
+free access to such resources to SMEs as well as larger companies. In this hands-on, you will learn:
 
 * What is an HPC resource and how it is different from a cloud environment;
 * What are the available HPC resources through the EuroHPC JU;
@@ -22,9 +22,7 @@ free access to such resources to SMEs as well as larger companies. In this cours
    :widths: auto
    :delim: ;
 
-   20 min ; :doc:`supercomputer`
-   20 min ; :doc:`why_cluster`
-   20 min ; :doc:`eurohpc`
+   20 min ; :doc:`supercomputer_why`
    20 min ; :doc:`connect_to_cluster`
    20 min ; :doc:`folders_and_transfer`
    20 min ; :doc:`software_modules`
@@ -35,9 +33,7 @@ free access to such resources to SMEs as well as larger companies. In this cours
    :maxdepth: 1
    :caption: The lesson
 
-   supercomputer
-   why_cluster
-   eurohpc
+   supercomputer_why
    connect_to_cluster
    folders_and_transfer
    software_modules
@@ -53,9 +49,6 @@ free access to such resources to SMEs as well as larger companies. In this cours
 
    guide
 
-
-
-.. _learner-personas:
 
 
 Who is the course for?

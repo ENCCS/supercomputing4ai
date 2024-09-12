@@ -13,7 +13,7 @@ free access to such resources to SMEs as well as larger companies. In this hands
 
 .. prereq::
 
-   You will need to have credentials to access the `PDC <https://www.pdc.kth.se/>`__ cluster. A working SSH client is needed: 
+   You will need to have credentials to access the `PDC <https://pdc.kth.se/>`__ cluster. A working SSH client is needed: 
    it is included on macOS and most Linux flavours; it is also available on Windows in the Powershell or under the `Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/install>`__.
 
 
@@ -26,7 +26,7 @@ free access to such resources to SMEs as well as larger companies. In this hands
    20 min ; :doc:`connect_to_cluster`
    20 min ; :doc:`folders_and_transfer`
    20 min ; :doc:`software_modules`
-   20 min ; :doc:`sbatch_jupyter`
+   20 min ; :doc:`sbatch_singularity`
 
 
 .. toctree::
@@ -37,7 +37,7 @@ free access to such resources to SMEs as well as larger companies. In this hands
    connect_to_cluster
    folders_and_transfer
    software_modules
-   sbatch_jupyter
+   sbatch_singularity
 
 
 

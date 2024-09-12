@@ -21,3 +21,15 @@ The module can then be loaded with ``module load <module_name(s)>``. For example
 .. code-block:: bash
     
     $ ml PDC julia
+
+
+.. type-along::
+
+    Let's try now to load the Singularity image to use Tensorflow. Loading the necessary modules first:
+
+    .. code-block:: bash
+
+        $ ml PDC/23.03 singularity/4.1.1-cpeGNU-23.03
+
+    PDC provides a number of pre-built images for common tasks, e.g. Tensorflow. Available images can be found under ``$PDC_SHUB``.
+

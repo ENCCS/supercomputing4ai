@@ -7,7 +7,7 @@ free access to such resources to SMEs as well as larger companies. In this hands
 * What is an HPC resource and how it is different from a cloud environment;
 * What are the available HPC resources through the EuroHPC JU;
 * How to connect to a cluster and explore resources;
-* How to run an example workflow.
+* How to run a demo AI workflow based on Singularity.
 
 
 
@@ -64,9 +64,28 @@ supercomputing environments is required.
 About the course
 ----------------
 
+We will train a Unet model to be able to recognise water in satellite pictures. The source code can be found at ``this <https://github.com/ENCCS/supercomputing4ai_demo.git>``__
+repo. 
 
+::
 
-
+  ../supercomputing4ai_demo
+  ├── build_singularity.def
+  ├── images
+  │   └── generated-images
+  ├── models
+  │   ├── serving
+  │   │   └── main.py
+  │   └── unet
+  │       ├── data
+  │       │   └── water
+  │       │       ├── Images
+  │       │       └── Masks
+  │       ├── main.py
+  │       └── result
+  │           ├── models
+  │           └── training
+  └── README.md
 
 
 See also

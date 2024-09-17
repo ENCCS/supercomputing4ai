@@ -6,7 +6,8 @@ Once SSH keys are created and uploaded on the PDC interface, entering the cluste
 
 .. code-block::bash 
 
-    ssh <username>@dardel.pdc.kth.se
+    ssh -Y <username>@dardel.pdc.kth.se
 
 
-Which should get you into the PDC supercomputer.
+Which should get you into the PDC supercomputer. The ``-Y`` flag is used to be able to open graphical windows on the supercomputer, e.g.
+to visualise images.

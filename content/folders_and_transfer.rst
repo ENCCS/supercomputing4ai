@@ -51,3 +51,4 @@ The optional ``-r`` flag is used to indicate recursive copying of whole folders 
 
         $ cd my_name
         $ git clone https://github.com/ENCCS/supercomputing4ai_demo
+        $ cd supercomputing4ai_demo

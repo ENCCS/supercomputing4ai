@@ -18,6 +18,52 @@ free access to such resources to SMEs as well as larger companies. In this hands
 
 
 
+
+
+Who is the course for?
+----------------------
+
+This course is intended for data scientists that want to take advantage of higher computing power to perform their workflows.
+Some degree of familiarity with a command-line shell is recommended, but no expertise is required. No previous knowledge of 
+supercomputing environments is required.
+
+
+
+
+About the course
+----------------
+
+We will train a Unet model to be able to recognise water in satellite pictures. The source code can be found at `this <https://github.com/ENCCS/supercomputing4ai_demo.git>`__
+repo. The example is based on Tensorflow and will be run using `Singularity <https://docs.sylabs.io/guides/3.5/user-guide/introduction.html>`__.
+The structure of the example is the following: 
+
+::
+
+  ./supercomputing4ai_demo
+  ├── build_singularity.def
+  ├── images
+  │   └── generated-images
+  ├── models
+  │   ├── serving
+  │   │   └── main.py
+  │   └── unet
+  │       ├── data
+  │       │   └── water
+  │       │       ├── Images
+  │       │       └── Masks
+  │       ├── main.py
+  │       └── result
+  │           ├── models
+  │           └── training
+  └── README.md
+
+
+The ``models`` subfolder contains the model to be trained (``unet``) and the inference code (``serving``). Under ``data``, the training
+dataset can be found, with the ``Images`` being some satellite images and ``Masks`` being the water-covered areas in those images. Upon 
+running ``main.py`` in the ``unet`` folder, a Unet will be trained, producing a set of weights in the ``models/`` subfolder and training 
+statistics (binary cross-entropy loss and accuracy). Inference is then performed with the ``models/serving/main.py`` script, which takes
+as an input an image and generates a mask of the water parts. 
+
 .. csv-table::
    :widths: auto
    :delim: ;
@@ -50,50 +96,6 @@ free access to such resources to SMEs as well as larger companies. In this hands
    guide
 
 
-
-Who is the course for?
-----------------------
-
-This course is intended for data scientists that want to take advantage of higher computing power to perform their workflows.
-Some degree of familiarity with a command-line shell is recommended, but no expertise is required. No previous knowledge of 
-supercomputing environments is required.
-
-
-
-
-About the course
-----------------
-
-We will train a Unet model to be able to recognise water in satellite pictures. The source code can be found at `this <https://github.com/ENCCS/supercomputing4ai_demo.git>`__
-repo. The example is based on Tensorflow and will be run using `Singularity <https://docs.sylabs.io/guides/3.5/user-guide/introduction.html>`__.
-The structure of the example is the following: 
-
-::
-
-  ../supercomputing4ai_demo
-  ├── build_singularity.def
-  ├── images
-  │   └── generated-images
-  ├── models
-  │   ├── serving
-  │   │   └── main.py
-  │   └── unet
-  │       ├── data
-  │       │   └── water
-  │       │       ├── Images
-  │       │       └── Masks
-  │       ├── main.py
-  │       └── result
-  │           ├── models
-  │           └── training
-  └── README.md
-
-
-The ``models`` subfolder contains the model to be trained (``unet``) and the inference code (``serving``). Under ``data``, the training
-dataset can be found, with the ``Images`` being some satellite images and ``Masks`` being the water-covered areas in those images. Upon 
-running ``main.py`` in the ``unet`` folder, a Unet will be trained, producing a set of weights in the ``models/`` subfolder and training 
-statistics (binary cross-entropy loss and accuracy). Inference is then performed with the ``models/serving/main.py`` script, which takes
-as an input an image and generates a mask of the water parts. 
 
 See also
 --------

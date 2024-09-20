@@ -22,6 +22,12 @@ The module can then be loaded with ``module load <module_name(s)>``. For example
     
     $ ml PDC julia
 
+All currently loaded modules can be printed with:
+
+.. code-block:: console
+
+    $ module list
+
 .. type-along::
 
     We will use a Singularity container to get a Tensorflow environment. For that, we need a few modules:

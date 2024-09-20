@@ -5,8 +5,8 @@ High performance computing (HPC) resources can be used to accelerate AI workflow
 free access to such resources to SMEs as well as larger companies. In this hands-on, you will learn:
 
 * What is an HPC resource and how it is different from a cloud environment;
-* What are the available HPC resources through the EuroHPC JU;
 * How to connect to a cluster and explore resources;
+* How to load necessary software and how workloads are managed;
 * How to run a demo AI workflow based on Singularity.
 
 
@@ -33,7 +33,19 @@ supercomputing environments is required.
 About the course
 ----------------
 
-We will train a Unet model to be able to recognise water in satellite pictures. The source code can be found at `this <https://github.com/ENCCS/supercomputing4ai_demo.git>`__
+We will train a Unet model to be able to recognise water in satellite pictures. The source data comes from the Sentinel-2 satellite.
+Let us take the following picture for example:
+
+.. image:: img/water_body_3.jpg
+  :width: 49% 
+
+.. image:: img/water_body_3_mask.jpg
+  :width: 49%
+
+The left panel shows the original image from Sentinel-2, whereas the right one was manually masked to highlight water regions.
+
+The objective is to train a Unet model to perform this automatically.
+The source code can be found at `this <https://github.com/ENCCS/supercomputing4ai_demo.git>`__
 repo. The example is based on Tensorflow and will be run using `Singularity <https://docs.sylabs.io/guides/3.5/user-guide/introduction.html>`__.
 The structure of the example is the following: 
 
@@ -64,15 +76,16 @@ running ``main.py`` in the ``unet`` folder, a Unet will be trained, producing a 
 statistics (binary cross-entropy loss and accuracy). Inference is then performed with the ``models/serving/main.py`` script, which takes
 as an input an image and generates a mask of the water parts. 
 
-.. csv-table::
-   :widths: auto
-   :delim: ;
+.. 
+  .. csv-table::
+    :widths: auto
+    :delim: ;
 
-   20 min ; :doc:`supercomputer_why`
-   20 min ; :doc:`connect_to_cluster`
-   20 min ; :doc:`folders_and_transfer`
-   20 min ; :doc:`software_modules`
-   20 min ; :doc:`sbatch_singularity`
+    20 min ; :doc:`supercomputer_why`
+    20 min ; :doc:`connect_to_cluster`
+    20 min ; :doc:`folders_and_transfer`
+    20 min ; :doc:`software_modules`
+    20 min ; :doc:`sbatch_singularity`
 
 
 .. toctree::

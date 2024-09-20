@@ -28,7 +28,7 @@ The module can then be loaded with ``module load <module_name(s)>``. For example
 
     .. code-block:: console
 
-        $ ml PDC Singularity
+        $ ml PDC singularity
     
     We can also inspect the produced images directly on the cluster using the ``display`` command, available in the ImageMagick
     toolkit:

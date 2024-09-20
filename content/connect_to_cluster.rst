@@ -31,3 +31,9 @@ to visualise images. This will work only if you have a running local X server (i
         supernova    up 14-00:00:0         5/6/5/16 nid[001817,001820,001897,002008,002540-002551]
 
     E.g. the ``main`` partition has 972 nodes, each containing 128 cores.
+
+    A general sense of the amount of work load can be gained with the ``squeue`` command, which shows all the jobs (running, queued):
+
+    .. code-block:: console
+
+        fiusco@login1:~> squeue

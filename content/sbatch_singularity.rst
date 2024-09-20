@@ -9,7 +9,7 @@ There are two main workflows:
 
 Interactive resources can be requested with the ``salloc`` command in the following fashion:
 
-.. code-block::bash
+.. code-block:: bash
 
   $ salloc -n <n_cores> -t HH:MM:SS -A <allocation_number> -p <partition>
 

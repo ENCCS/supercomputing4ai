@@ -2,7 +2,7 @@ Connecting to a HPC resource
 ==============================
 
 
-Once SSH keys are created and uploaded on the PDC interface, entering the cluster is as simple as:
+If using SSH keys, once the keys are created and uploaded on the PDC interface, entering the cluster is as simple as:
 
 .. code-block:: console 
 
@@ -11,8 +11,27 @@ Once SSH keys are created and uploaded on the PDC interface, entering the cluste
 
 Which should get you into the PDC supercomputer. The ``-Y`` flag is used to be able to open graphical windows on the supercomputer, e.g.
 to visualise images. This will work only if you have a running local X server (if you are on Linux/WSL, you most likely do).
+Alternatively, you may choose to use Kerberos as an authentication method. To do that, you first need to ask for a Kerberos ticket:
+
+.. code-block:: console
+
+    $ kinit -f <username>@NADA.PDC.KTH.SE
+
+After that, the SSH command looks like the following:
+
+.. code-block:: console
+
+    $ ssh -o GSSAPIAuthentication=yes -Y <username>@dardel.pdc.kth.se
+
+More information about Kerberos can be found at `this <https://www.pdc.kth.se/support/documents/login/configuration.html>`__ address.
 
 .. type-along::
+
+    Let us check on which node we ended up. The name of the machine can be checked with the `hostname` command:
+
+    .. code-block:: console
+
+        $ hostname
 
     We can get a sense of the size of Dardel by using the ``sinfo`` command:
 

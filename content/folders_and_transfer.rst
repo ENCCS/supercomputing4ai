@@ -32,7 +32,7 @@ Moving files/folders from/to the cluster can be achieved via the ``scp`` command
 
 .. code-block:: console
     
-    $ scp [-r] user@dardel.pdc.kth.se:/path/to/source /path/to/local/destination
+    $ scp [-r] /path/to/local/source user@dardel.pdc.kth.se:/path/to/destination 
 
 The optional ``-r`` flag is used to indicate recursive copying of whole folders and their contents.
 

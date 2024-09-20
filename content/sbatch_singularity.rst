@@ -21,13 +21,13 @@ Once the requested resources are granted, a MPI job can be executed with ``srun 
 
   Let's book a node with a GPU to run our script:
 
-  .. code-block:: bash
+  .. code-block:: console
 
     $ salloc -n 1 -t 00:50:00 -A pdc-bus-2024-8 -p gpu --gpus=1
 
   Once we get our node, we can train our model:
 
-  .. code-block:: bash
+  .. code-block:: console
     
     $ srun -n 1 singularity exec --rocm -B ./models:/models /cfs/klemming/projects/supr/bustestingshared/ENCCS/rocm_tensorflow/ python models/unet/main.py
   
@@ -36,13 +36,13 @@ Once the requested resources are granted, a MPI job can be executed with ``srun 
   can inspect a the accuracy and losses in the ``results/training`` folder with the ``display`` command.
   Once the network is trained, we can perform inference: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
     $ srun -n 1 singularity --exec --rocm -B ./models:/models,./images:/images /cfs/klemming/projects/supr/bustestingshared/ENCCS/rocm_tensorflow python models/serving/main.py -f water_body_17.jpg
 
   The image and generated mask can be shown with:
 
-  .. code-block:: bash
+  .. code-block:: console
 
     $ display images/water_body_17.jpg
     $ display images/generated-images/water_body_17.jpg
@@ -83,5 +83,6 @@ Once the requested resources are granted, a MPI job can be executed with ``srun 
   We can check the status in queue with:
 
   .. code-block:: console
+
     $ squeue -u <username>
     

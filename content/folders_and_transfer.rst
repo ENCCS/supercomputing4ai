@@ -13,7 +13,7 @@ the home folder. The full path of this directory can be printed using the ``pwd`
 
 .. code:: console 
 
-    fiusco@login1:~>pwd
+    $ pwd
     /cfs/klemming/home/f/fiusco
 
 
@@ -21,7 +21,7 @@ The contents of a directory can be listed with the ``ls`` command:
 
 .. code-block:: console 
 
-    fiusco@login1:~>ls
+    $ ls
     Private  Public  spack-user
 
 
@@ -32,7 +32,7 @@ Moving files/folders from/to the cluster can be achieved via the ``scp`` command
 
 .. code-block:: console
     
-    scp [-r] user@dardel.pdc.kth.se:/path/to/source /path/to/local/destination
+    $ scp [-r] user@dardel.pdc.kth.se:/path/to/source /path/to/local/destination
 
 The optional ``-r`` flag is used to indicate recursive copying of whole folders and their contents.
 
@@ -40,14 +40,14 @@ The optional ``-r`` flag is used to indicate recursive copying of whole folders 
 
     In this workshop, our working folder will be in ``/cfs/klemming/projects/supr/testingsharedbus/``. You can create your own folder:
 
-    .. code-block:: bash 
+    .. code-block:: console 
 
         $ cd /cfs/klemming/projects/supr/testingsharedbus/
         $ mkdir my_name
     
     We can now clone the repository containing the material for the workshop:
 
-    .. code-block:: bash
+    .. code-block:: console
 
         $ cd my_name
         $ git clone https://github.com/ENCCS/supercomputing4ai_demo

@@ -4,9 +4,9 @@ Connecting to a HPC resource
 
 Once SSH keys are created and uploaded on the PDC interface, entering the cluster is as simple as:
 
-.. code-block::bash 
+.. code-block:: console 
 
-    ssh -Y <username>@dardel.pdc.kth.se
+    $ ssh -Y <username>@dardel.pdc.kth.se
 
 
 Which should get you into the PDC supercomputer. The ``-Y`` flag is used to be able to open graphical windows on the supercomputer, e.g.
@@ -18,7 +18,7 @@ to visualise images. This will work only if you have a running local X server (i
 
     .. code-block:: console
 
-        fiusco@login1:~> sinfo -s
+        $ sinfo -s
         PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
         gpu          up 1-00:00:00        49/9/4/62 nid[002792-002853]
         main         up 1-00:00:00  604/256/112/972 nid[001012-001531,001756-001816,001818-001819,001821-001896,001898-002007,002009-002023,002552-002567,002588-002759]
@@ -36,4 +36,4 @@ to visualise images. This will work only if you have a running local X server (i
 
     .. code-block:: console
 
-        fiusco@login1:~> squeue
+        $ squeue

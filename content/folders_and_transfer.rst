@@ -42,7 +42,7 @@ The optional ``-r`` flag is used to indicate recursive copying of whole folders 
 
     .. code-block:: console 
 
-        $ cd /cfs/klemming/projects/supr/testingsharedbus/
+        $ cd /cfs/klemming/projects/supr/bustestingshared
         $ mkdir my_name
     
     We can now clone the repository containing the material for the workshop:

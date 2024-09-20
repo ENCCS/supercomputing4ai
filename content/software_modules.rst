@@ -30,9 +30,10 @@ The module can then be loaded with ``module load <module_name(s)>``. For example
 
         $ ml PDC singularity
     
-    We can also inspect the produced images directly on the cluster using the ``display`` command, available in the ImageMagick
-    toolkit:
+    .. 
+        We can also inspect the produced images directly on the cluster using the ``display`` command, available in the ImageMagick
+        toolkit:
 
-    .. code-block:: console
+        .. code-block:: console
 
-        $ ml ImageMagick
+            $ ml ImageMagick

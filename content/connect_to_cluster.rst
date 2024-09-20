@@ -27,7 +27,7 @@ More information about Kerberos can be found at `this <https://www.pdc.kth.se/su
 
 .. type-along::
 
-    Let us check on which node we ended up. The name of the machine can be checked with the `hostname` command:
+    Let us check on which node we ended up. The name of the machine can be checked with the ``hostname`` command:
 
     .. code-block:: console
 

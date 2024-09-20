@@ -38,16 +38,17 @@ Once the requested resources are granted, a MPI job can be executed with ``srun 
 
   .. code-block:: console
 
-    $ srun -n 1 singularity --exec --rocm -B ./models:/models,./images:/images /cfs/klemming/projects/supr/bustestingshared/ENCCS/rocm_tensorflow python models/serving/main.py -f water_body_17.jpg
+    $ srun -n 1 singularity exec --rocm -B ./models:/models,./images:/images /cfs/klemming/projects/supr/bustestingshared/ENCCS/rocm_tensorflow python models/serving/main.py water_body_17.jpg
 
-  The image and generated mask can be shown with:
+  ..
+    The image and generated mask can be shown with:
 
-  .. code-block:: console
+    .. code-block:: console
 
-    $ display images/water_body_17.jpg
-    $ display images/generated-images/water_body_17.jpg
+      $ display images/water_body_17.jpg
+      $ display images/generated-images/water_body_17.jpg
   
-  Alternatively, you can open another local terminal (i.e. on your computer) and copy the images back for local visualisation:
+  You can open another local terminal (i.e. on your computer) and copy the images back for local visualisation:
 
   .. code-block:: console
 

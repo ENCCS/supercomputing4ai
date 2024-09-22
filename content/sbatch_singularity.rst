@@ -32,8 +32,8 @@ Once the requested resources are granted, a MPI job can be executed with ``srun 
     $ srun -n 1 singularity exec --rocm -B ./models:/models /cfs/klemming/projects/supr/bustestingshared/ENCCS/rocm_tensorflow/ python models/unet/main.py
   
   The ``-B`` flag is used to bind a directory on the filesystem to a directory in the container and the ``--rocm`` flag is used to expose the GPU to
-  the container. The ``rocm_tensorflow`` folder contains a pre-built container with the necessary Python packages. If the ImageMagick module was loaded, we 
-  can inspect a the accuracy and losses in the ``results/training`` folder with the ``display`` command.
+  the container. The ``rocm_tensorflow`` folder contains a pre-built container with the necessary Python packages. We 
+  can inspect the accuracy and losses in the ``results/training`` folder, e.g. copying the images to our own laptop.
   Once the network is trained, we can perform inference: 
 
   .. code-block:: console

@@ -38,7 +38,7 @@ The optional ``-r`` flag is used to indicate recursive copying of whole folders 
 
 .. type-along::
 
-    In this workshop, our working folder will be in ``/cfs/klemming/projects/supr/testingsharedbus/``. You can create your own folder:
+    In this workshop, our working folder will be in ``/cfs/klemming/projects/supr/bustestingshared/``. You can create your own folder:
 
     .. code-block:: console 
 

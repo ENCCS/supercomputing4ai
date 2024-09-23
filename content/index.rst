@@ -97,6 +97,7 @@ as an input an image and generates a mask of the water parts.
    folders_and_transfer
    software_modules
    sbatch_singularity
+   further_resources
 
 
 

@@ -131,6 +131,6 @@ def setup(app):
 import os
 if os.environ.get('GITHUB_REF', '') == 'refs/heads/main':
     html_js_files = [
-        ('https://plausible.io/js/script.js', {"data-domain": "enccs.github.io/openmp-gpu", "defer": "\
+        ('https://plausible.io/js/script.js', {"data-domain": "enccs.github.io/supercomputing4ai", "defer": "\
 defer"}),
     ]        

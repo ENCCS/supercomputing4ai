@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supercomputing for AI documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_lesson.css" />
+      <link rel="stylesheet" type="text/css" href="_static/term_role_formatting.css" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_rtd_theme_ext_color_contrast.css" />
+      <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="_static/overrides.css" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/minipres.js"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Supercomputing for AI
+              <img src="_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The lesson</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="#document-supercomputer_why">What is a supercomputer and how is it different from cloud?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-connect_to_cluster">Connecting to a HPC resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-folders_and_transfer">Move between folders, ls, transferring to/from local storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-software_modules">Available software and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-sbatch_singularity">Queueing jobs and running a Singularity container</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="#document-quick-reference">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-guide">Instructor’s guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Supercomputing for AI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Supercomputing for AI  documentation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/content/blob/main/content/index" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction-to-supercomputing-for-ai">
+<h1>Introduction to supercomputing for AI<a class="headerlink" href="#introduction-to-supercomputing-for-ai" title="Link to this heading"></a></h1>
+<p>High performance computing (HPC) resources can be used to accelerate AI workflows. The EuroHPC Joint Undertaking (JU) offers
+free access to such resources to SMEs as well as larger companies. In this hands-on, you will learn:</p>
+<ul class="simple">
+<li><p>What is an HPC resource and how it is different from a cloud environment;</p></li>
+<li><p>What are the available HPC resources through the EuroHPC JU;</p></li>
+<li><p>How to connect to a cluster and explore resources;</p></li>
+<li><p>How to run a demo AI workflow based on Singularity.</p></li>
+</ul>
+<div class="admonition-prerequisites prerequisites admonition" id="prerequisites-0">
+<p class="admonition-title">Prerequisites</p>
+<p>You will need to have credentials to access the <a class="reference external" href="https://pdc.kth.se/">PDC</a> cluster. A working SSH client is needed:
+it is included on macOS and most Linux flavours; it is also available on Windows in the Powershell or under the <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a>.</p>
+</div>
+<section id="who-is-the-course-for">
+<h2>Who is the course for?<a class="headerlink" href="#who-is-the-course-for" title="Link to this heading"></a></h2>
+<p>This course is intended for data scientists that want to take advantage of higher computing power to perform their workflows.
+Some degree of familiarity with a command-line shell is recommended, but no expertise is required. No previous knowledge of
+supercomputing environments is required.</p>
+</section>
+<section id="about-the-course">
+<h2>About the course<a class="headerlink" href="#about-the-course" title="Link to this heading"></a></h2>
+<p>We will train a Unet model to be able to recognise water in satellite pictures. The source code can be found at <a class="reference external" href="https://github.com/ENCCS/supercomputing4ai_demo.git">this</a>
+repo. The example is based on Tensorflow and will be run using <a class="reference external" href="https://docs.sylabs.io/guides/3.5/user-guide/introduction.html">Singularity</a>.
+The structure of the example is the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>./supercomputing4ai_demo
+├── build_singularity.def
+├── images
+│   └── generated-images
+├── models
+│   ├── serving
+│   │   └── main.py
+│   └── unet
+│       ├── data
+│       │   └── water
+│       │       ├── Images
+│       │       └── Masks
+│       ├── main.py
+│       └── result
+│           ├── models
+│           └── training
+└── README.md
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">models</span></code> subfolder contains the model to be trained (<code class="docutils literal notranslate"><span class="pre">unet</span></code>) and the inference code (<code class="docutils literal notranslate"><span class="pre">serving</span></code>). Under <code class="docutils literal notranslate"><span class="pre">data</span></code>, the training
+dataset can be found, with the <code class="docutils literal notranslate"><span class="pre">Images</span></code> being some satellite images and <code class="docutils literal notranslate"><span class="pre">Masks</span></code> being the water-covered areas in those images. Upon
+running <code class="docutils literal notranslate"><span class="pre">main.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">unet</span></code> folder, a Unet will be trained, producing a set of weights in the <code class="docutils literal notranslate"><span class="pre">models/</span></code> subfolder and training
+statistics (binary cross-entropy loss and accuracy). Inference is then performed with the <code class="docutils literal notranslate"><span class="pre">models/serving/main.py</span></code> script, which takes
+as an input an image and generates a mask of the water parts.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>20 min</p></td>
+<td><p><a class="reference internal" href="#document-supercomputer_why"><span class="doc">What is a supercomputer and how is it different from cloud?</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>20 min</p></td>
+<td><p><a class="reference internal" href="#document-connect_to_cluster"><span class="doc">Connecting to a HPC resource</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>20 min</p></td>
+<td><p><a class="reference internal" href="#document-folders_and_transfer"><span class="doc">Move between folders, ls, transferring to/from local storage</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>20 min</p></td>
+<td><p><a class="reference internal" href="#document-software_modules"><span class="doc">Available software and modules</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>20 min</p></td>
+<td><p><a class="reference internal" href="#document-sbatch_singularity"><span class="doc">Queueing jobs and running a Singularity container</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+<span id="document-supercomputer_why"></span><section id="what-is-a-supercomputer-and-how-is-it-different-from-cloud">
+<h3>What is a supercomputer and how is it different from cloud?<a class="headerlink" href="#what-is-a-supercomputer-and-how-is-it-different-from-cloud" title="Link to this heading"></a></h3>
+<p>A supercomputer (or <em>cluster</em>) is a high-performance computing infrastructure. The general idea is to have many (thousands) of machines, called <em>nodes</em>, working in parallel
+to increase performance. Each node can have one or several (usually two) multi-core CPUs, local RAM, and possibly accelerators such as GPUs. What distinguishes a cluster
+from a simple collection of computers is the high-speed connection between all the nodes, called <em>interconnect</em>. The speed and density of connections between nodes makes it
+possible for the nodes to seamlessly communicate and solve a problem in parallel. The general architecture of a cluster looks like below:</p>
+<figure class="align-default" id="id1">
+<img alt="_images/cluster_diagram.png" src="_images/cluster_diagram.png" />
+<figcaption>
+<p><span class="caption-text">Schematics of a typical cluster.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The user accesses the cluster through the <em>login nodes</em>, which act as a gateway between the external world and the compute parts. They should not be used to run calculations.
+Usually a parallel file system is provided (such as <a class="reference external" href="https://www.lustre.org/">Lustre</a>), with independent servers (not shown in the figure) that manage distributed access
+from all the nodes. Moreover, each node usually has some temporary storage called <em>scratch</em> for fast access during computation.
+On Dardel specifically, each CPU node has two AMD EPYC CPUs with 64 physical cores each and RAM ranging from 256 GB to 2 TB. Each GPU node has one AMD EPYC and 4 AMD Instinct
+MI250X GPUs, each containing two GCDs (compute chips in AMD lingo); thus, each node has 8 GPUs.</p>
+<section id="how-is-hpc-different-from-cloud">
+<h4>How is HPC different from cloud?<a class="headerlink" href="#how-is-hpc-different-from-cloud" title="Link to this heading"></a></h4>
+<p>While they both provide access to high-performance computational resources, a few important differences exist between cloud and HPC systems:</p>
+<ul class="simple">
+<li><p>An HPC resource is shared among several users; usually users do not have root access, unlike cloud where each user has their own sandboxed environment;</p></li>
+<li><p>Each workload pushed by a user (called <em>job</em>) contends for the available resources; usually, a queueing system is managed by a <em>job manager</em> (more on that later) which decides
+which jobs are going to run to maximise cluster usage. This means that a job may have to wait for resources before it is allowed to run.</p></li>
+<li><p>(Through EuroHPC) the cost of HPC does not scale with amount of resources used; with cloud it does.</p></li>
+<li><p>Engineering/scientific applications usually expect an HPC-like environment which is harder to set up in the cloud;</p></li>
+<li><p>Access to bare metal vs virtual machines.</p></li>
+</ul>
+</section>
+</section>
+<span id="document-connect_to_cluster"></span><section id="connecting-to-a-hpc-resource">
+<h3>Connecting to a HPC resource<a class="headerlink" href="#connecting-to-a-hpc-resource" title="Link to this heading"></a></h3>
+<p>If using SSH keys, once the keys are created and uploaded on the PDC interface, entering the cluster is as simple as:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh<span class="w"> </span>-Y<span class="w"> </span>&lt;username&gt;@dardel.pdc.kth.se
+</pre></div>
+</div>
+<p>Which should get you into the PDC supercomputer. The <code class="docutils literal notranslate"><span class="pre">-Y</span></code> flag is used to be able to open graphical windows on the supercomputer, e.g.
+to visualise images. This will work only if you have a running local X server (if you are on Linux/WSL, you most likely do).
+Alternatively, you may choose to use Kerberos as an authentication method. To do that, you first need to ask for a Kerberos ticket:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kinit<span class="w"> </span>-f<span class="w"> </span>&lt;username&gt;@NADA.PDC.KTH.SE
+</pre></div>
+</div>
+<p>After that, the SSH command looks like the following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">GSSAPIAuthentication</span><span class="o">=</span>yes<span class="w"> </span>-Y<span class="w"> </span>&lt;username&gt;@dardel.pdc.kth.se
+</pre></div>
+</div>
+<p>More information about Kerberos can be found at <a class="reference external" href="https://www.pdc.kth.se/support/documents/login/configuration.html">this</a> address.</p>
+<div class="admonition-type-along type-along important admonition" id="type-along-0">
+<p class="admonition-title">Type-Along</p>
+<p>Let us check on which node we ended up. The name of the machine can be checked with the <cite>hostname</cite> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>hostname
+</pre></div>
+</div>
+<p>We can get a sense of the size of Dardel by using the <code class="docutils literal notranslate"><span class="pre">sinfo</span></code> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sinfo<span class="w"> </span>-s
+<span class="go">PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST</span>
+<span class="go">gpu          up 1-00:00:00        49/9/4/62 nid[002792-002853]</span>
+<span class="go">main         up 1-00:00:00  604/256/112/972 nid[001012-001531,001756-001816,001818-001819,001821-001896,001898-002007,002009-002023,002552-002567,002588-002759]</span>
+<span class="go">scania       up 4-00:00:00    22/187/15/224 nid[001532-001755]</span>
+<span class="go">scania-hf    up 4-00:00:00          0/3/1/4 nid[000011-000014]</span>
+<span class="go">memory       up 7-00:00:00        34/8/0/42 nid[000101-000118,001772-001779,002552-002567]</span>
+<span class="go">shared       up 7-00:00:00        27/5/0/32 nid[001000-001011,002568-002587]</span>
+<span class="go">long         up 7-00:00:00        76/4/0/80 nid[001800-001819,002588-002647]</span>
+<span class="go">eggnog       up 7-00:00:00          4/0/0/4 nid[002536-002539]</span>
+<span class="go">supernova    up 14-00:00:0         5/6/5/16 nid[001817,001820,001897,002008,002540-002551]</span>
+</pre></div>
+</div>
+<p>E.g. the <code class="docutils literal notranslate"><span class="pre">main</span></code> partition has 972 nodes, each containing 128 cores.</p>
+<p>A general sense of the amount of work load can be gained with the <code class="docutils literal notranslate"><span class="pre">squeue</span></code> command, which shows all the jobs (running, queued):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>squeue
+</pre></div>
+</div>
+</div>
+</section>
+<span id="document-folders_and_transfer"></span><section id="move-between-folders-ls-transferring-to-from-local-storage">
+<h3>Move between folders, ls, transferring to/from local storage<a class="headerlink" href="#move-between-folders-ls-transferring-to-from-local-storage" title="Link to this heading"></a></h3>
+<p>Upon logging in, you should be in your “home” folder, as reported by the prompt:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fiusco@login1:~&gt;</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">login1</span></code> is the name of the host (in this case, the login node) and <code class="docutils literal notranslate"><span class="pre">~</span></code> represents
+the home folder. The full path of this directory can be printed using the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command
+(<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">pwd</span>
+<span class="go">/cfs/klemming/home/f/fiusco</span>
+</pre></div>
+</div>
+<p>The contents of a directory can be listed with the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ls
+<span class="go">Private  Public  spack-user</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cd</span></code> (<strong>c</strong>hange <strong>d</strong>irectory) command can be used to navigate the filesystem.</p>
+<p>Moving files/folders from/to the cluster can be achieved via the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command to be run locally
+(i.e. not on the cluster):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>scp<span class="w"> </span><span class="o">[</span>-r<span class="o">]</span><span class="w"> </span>/path/to/local/source<span class="w"> </span>user@dardel.pdc.kth.se:/path/to/destination
+</pre></div>
+</div>
+<p>The optional <code class="docutils literal notranslate"><span class="pre">-r</span></code> flag is used to indicate recursive copying of whole folders and their contents.</p>
+<div class="admonition-type-along type-along important admonition" id="type-along-0">
+<p class="admonition-title">Type-Along</p>
+<p>In this workshop, our working folder will be in <code class="docutils literal notranslate"><span class="pre">/cfs/klemming/projects/supr/testingsharedbus/</span></code>. You can create your own folder:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>/cfs/klemming/projects/supr/bustestingshared
+<span class="gp">$ </span>mkdir<span class="w"> </span>my_name
+</pre></div>
+</div>
+<p>We can now clone the repository containing the material for the workshop:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>my_name
+<span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ENCCS/supercomputing4ai_demo
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>supercomputing4ai_demo
+</pre></div>
+</div>
+</div>
+</section>
+<span id="document-software_modules"></span><section id="available-software-and-modules">
+<h3>Available software and modules<a class="headerlink" href="#available-software-and-modules" title="Link to this heading"></a></h3>
+<p>A variety of software, libraries and compiler toolchains is usually available on most HPC resources.
+Usually a <a class="reference external" href="https://lmod.readthedocs.io/en/latest/">module</a> system is used to access software provided by
+the cluster. A list of all available modules can be printed with the following syntax</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>module<span class="w"> </span>avail
+</pre></div>
+</div>
+<p>The presence of a particular piece of software/library can be queried with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ml<span class="w"> </span>spider<span class="w"> </span>&lt;name&gt;
+</pre></div>
+</div>
+<p>This command will return all available versions of a module (if present), as well as specific instructions to load it if needed.
+The module can then be loaded with <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">&lt;module_name(s)&gt;</span></code>. For example, the <em>Julia</em> runtime can be loaded with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ml<span class="w"> </span>PDC<span class="w"> </span>julia
+</pre></div>
+</div>
+<div class="admonition-type-along type-along important admonition" id="type-along-0">
+<p class="admonition-title">Type-Along</p>
+<p>We will use a Singularity container to get a Tensorflow environment. For that, we need a few modules:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ml<span class="w"> </span>PDC<span class="w"> </span>singularity
+</pre></div>
+</div>
+<p>We can also inspect the produced images directly on the cluster using the <code class="docutils literal notranslate"><span class="pre">display</span></code> command, available in the ImageMagick
+toolkit:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ml<span class="w"> </span>ImageMagick
+</pre></div>
+</div>
+</div>
+</section>
+<span id="document-sbatch_singularity"></span><section id="queueing-jobs-and-running-a-singularity-container">
+<h3>Queueing jobs and running a Singularity container<a class="headerlink" href="#queueing-jobs-and-running-a-singularity-container" title="Link to this heading"></a></h3>
+<p>Most supercomputers use a system called <a class="reference external" href="https://slurm.schedmd.com/documentation.html">SLURM</a> to manage jobs and maximise cluster utilisation.
+There are two main workflows:</p>
+<ul class="simple">
+<li><p>Interactive mode, in which the user asks for resources, logs into the compute nodes and runs all they need to run</p></li>
+<li><p>Batch mode, in which the user prepares a <code class="docutils literal notranslate"><span class="pre">submit</span></code> script (usually Bash) that contains all the instructions to be executed. The script is then placed in the queue and runs without any further inputs.</p></li>
+</ul>
+<p>Interactive resources can be requested with the <code class="docutils literal notranslate"><span class="pre">salloc</span></code> command in the following fashion:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>salloc<span class="w"> </span>-n<span class="w"> </span>&lt;n_cores&gt;<span class="w"> </span>-t<span class="w"> </span>HH:MM:SS<span class="w"> </span>-A<span class="w"> </span>&lt;allocation_number&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;partition&gt;
+</pre></div>
+</div>
+<p>Most parameters are self-explanatory. <code class="docutils literal notranslate"><span class="pre">-t</span></code> is the wall time, <code class="docutils literal notranslate"><span class="pre">-A</span></code> is an allocation dependent on the project. <code class="docutils literal notranslate"><span class="pre">-p</span></code> is required by some clusters that have different types of nodes, e.g. Dardel has
+a set of nodes reserved for interactive use on a partition called <code class="docutils literal notranslate"><span class="pre">shared</span></code> and a set of nodes with GPUs (<code class="docutils literal notranslate"><span class="pre">gpu</span></code>). There are many other options that are explained <a class="reference external" href="https://slurm.schedmd.com/salloc.html">here</a>.
+Once the requested resources are granted, a MPI job can be executed with <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">-n</span> <span class="pre">&lt;n_cores&gt;</span> <span class="pre">my_command</span></code>; alternatively, the user can also ssh directly into the allocated node.</p>
+<div class="admonition-type-along type-along important admonition" id="type-along-0">
+<p class="admonition-title">Type-Along</p>
+<p>Let’s book a node with a GPU to run our script:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>salloc<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span><span class="m">00</span>:50:00<span class="w"> </span>-A<span class="w"> </span>pdc-bus-2024-8<span class="w"> </span>-p<span class="w"> </span>gpu<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Once we get our node, we can train our model:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--rocm<span class="w"> </span>-B<span class="w"> </span>./models:/models<span class="w"> </span>/cfs/klemming/projects/supr/bustestingshared/ENCCS/rocm_tensorflow/<span class="w"> </span>python<span class="w"> </span>models/unet/main.py
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">-B</span></code> flag is used to bind a directory on the filesystem to a directory in the container and the <code class="docutils literal notranslate"><span class="pre">--rocm</span></code> flag is used to expose the GPU to
+the container. The <code class="docutils literal notranslate"><span class="pre">rocm_tensorflow</span></code> folder contains a pre-built container with the necessary Python packages. If the ImageMagick module was loaded, we
+can inspect a the accuracy and losses in the <code class="docutils literal notranslate"><span class="pre">results/training</span></code> folder with the <code class="docutils literal notranslate"><span class="pre">display</span></code> command.
+Once the network is trained, we can perform inference:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>srun<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>singularity<span class="w"> </span>--exec<span class="w"> </span>--rocm<span class="w"> </span>-B<span class="w"> </span>./models:/models,./images:/images<span class="w"> </span>/cfs/klemming/projects/supr/bustestingshared/ENCCS/rocm_tensorflow<span class="w"> </span>python<span class="w"> </span>models/serving/main.py<span class="w"> </span>-f<span class="w"> </span>water_body_17.jpg
+</pre></div>
+</div>
+<p>The image and generated mask can be shown with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>display<span class="w"> </span>images/water_body_17.jpg
+<span class="gp">$ </span>display<span class="w"> </span>images/generated-images/water_body_17.jpg
+</pre></div>
+</div>
+<p>Alternatively, you can open another local terminal (i.e. on your computer) and copy the images back for local visualisation:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">scp -r &lt;yourusername&gt;@dardel.pdc.kth.se:/cfs/klemming/projects/supr/bustestingshared/&lt;yourname&gt;/supercomputing4ai_demo/images /local/path</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-bonus-batch-mode-job type-along important admonition" id="type-along-1">
+<p class="admonition-title">Bonus - Batch mode job</p>
+<p>It is often easier to submit a job to the general queue rather than waiting for an interactive resource. As an example, we can book two nodes and print
+their host name. Let’s create the following submission script and call it <cite>submit_test.sh</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -l</span>
+<span class="c1">#SBATCH -J test # Job name</span>
+<span class="c1">#SBATCH -t 00:02:00 # Wall time</span>
+<span class="c1">#SBATCH -A pdc-bus-2024-8 # Allocation number</span>
+<span class="c1">#SBATCH -p main # Partition - in this case the normal (non-GPU) is fine</span>
+<span class="c1">#SBATCH --nodes 2 # We want two different nodes</span>
+<span class="c1">#SBATCH --ntasks-per-node=1 # We want to book only one core on each node - We need just the hostname after all :)</span>
+<span class="c1">#SBATCH --mail-type=ALL # Get an email when the job starts and when the job ends</span>
+
+<span class="c1"># Now for the actual instruction to be executed</span>
+srun<span class="w"> </span>hostname<span class="w"> </span>&gt;<span class="w"> </span>out.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="c1"># Black magic to redirect both stdout and stderr to the same file</span>
+</pre></div>
+</div>
+<p>We can now submit our short job to the queue:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sbatch<span class="w"> </span>submit.sh
+</pre></div>
+</div>
+<p>We can check the status in queue with:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>squeue<span class="w"> </span>-u<span class="w"> </span>&lt;username&gt;
+</pre></div>
+</div>
+</div>
+</section>
+</div>
+<div class="toctree-wrapper compound">
+<span id="document-quick-reference"></span><section id="quick-reference">
+<h3>Quick Reference<a class="headerlink" href="#quick-reference" title="Link to this heading"></a></h3>
+</section>
+<span id="document-guide"></span><section id="instructor-s-guide">
+<h3>Instructor’s guide<a class="headerlink" href="#instructor-s-guide" title="Link to this heading"></a></h3>
+<section id="why-we-teach-this-lesson">
+<h4>Why we teach this lesson<a class="headerlink" href="#why-we-teach-this-lesson" title="Link to this heading"></a></h4>
+</section>
+<section id="intended-learning-outcomes">
+<h4>Intended learning outcomes<a class="headerlink" href="#intended-learning-outcomes" title="Link to this heading"></a></h4>
+</section>
+<section id="timing">
+<h4>Timing<a class="headerlink" href="#timing" title="Link to this heading"></a></h4>
+</section>
+<section id="preparing-exercises">
+<h4>Preparing exercises<a class="headerlink" href="#preparing-exercises" title="Link to this heading"></a></h4>
+<p>e.g. what to do the day before to set up common repositories.</p>
+</section>
+<section id="other-practical-aspects">
+<h4>Other practical aspects<a class="headerlink" href="#other-practical-aspects" title="Link to this heading"></a></h4>
+</section>
+<section id="interesting-questions-you-might-get">
+<h4>Interesting questions you might get<a class="headerlink" href="#interesting-questions-you-might-get" title="Link to this heading"></a></h4>
+</section>
+<section id="typical-pitfalls">
+<h4>Typical pitfalls<a class="headerlink" href="#typical-pitfalls" title="Link to this heading"></a></h4>
+</section>
+</section>
+</div>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
+<p>Further introductory material can be found on the <a class="reference external" href="https://lumi-supercomputer.github.io/lumi-self-learning/">Introduction to LUMI</a> and
+<a class="reference external" href="https://carpentries-incubator.github.io/hpc-intro/">HPC carpentry</a> pages.</p>
+</section>
+<section id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Link to this heading"></a></h2>
+<p>The lesson file structure and browsing layout is inspired by and derived from
+<a class="reference external" href="https://github.com/coderefinery/sphinx-lesson">work</a> by <a class="reference external" href="https://coderefinery.org/">CodeRefinery</a> licensed under the <a class="reference external" href="http://opensource.org/licenses/mit-license.html">MIT license</a>. We have copied and adapted
+most of their license text.</p>
+<section id="instructional-material">
+<h3>Instructional Material<a class="headerlink" href="#instructional-material" title="Link to this heading"></a></h3>
+<p>This instructional material is made available under the
+<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY-4.0)</a>.
+The following is a human-readable summary of (and not a substitute for) the
+<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">full legal text of the CC-BY-4.0 license</a>.
+You are free to:</p>
+<ul class="simple">
+<li><p><strong>share</strong> - copy and redistribute the material in any medium or format</p></li>
+<li><p><strong>adapt</strong> - remix, transform, and build upon the material for any purpose,
+even commercially.</p></li>
+</ul>
+<p>The licensor cannot revoke these freedoms as long as you follow these license terms:</p>
+<ul class="simple">
+<li><p><strong>Attribution</strong> - You must give appropriate credit (mentioning that your work
+is derived from work that is Copyright (c) ENCCS and individual contributors and, where practical, linking
+to <a class="reference external" href="https://enccs.github.io/sphinx-lesson-template">https://enccs.github.io/sphinx-lesson-template</a>), provide a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">link to the license</a>, and indicate if changes were
+made. You may do so in any reasonable manner, but not in any way that suggests
+the licensor endorses you or your use.</p></li>
+<li><p><strong>No additional restrictions</strong> - You may not apply legal terms or
+technological measures that legally restrict others from doing anything the
+license permits.</p></li>
+</ul>
+<p>With the understanding that:</p>
+<ul class="simple">
+<li><p>You do not have to comply with the license for elements of the material in
+the public domain or where your use is permitted by an applicable exception
+or limitation.</p></li>
+<li><p>No warranties are given. The license may not give you all of the permissions
+necessary for your intended use. For example, other rights such as
+publicity, privacy, or moral rights may limit how you use the material.</p></li>
+</ul>
+</section>
+<section id="software">
+<h3>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h3>
+<p>Except where otherwise noted, the example programs and other software provided
+with this repository are made available under the <a class="reference external" href="http://opensource.org/">OSI</a>-approved
+<a class="reference external" href="https://opensource.org/licenses/mit-license.html">MIT license</a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

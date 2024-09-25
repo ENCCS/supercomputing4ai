@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to supercomputing for AI &mdash; Supercomputing for AI  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=187304be"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script src="_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script data-domain="enccs.github.io/supercomputing4ai" defer="defer" src="https://plausible.io/js/script.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex/" />
+    <link rel="search" title="Search" href="search/" />
+    <link rel="next" title="What is a supercomputer and how is it different from cloud?" href="supercomputer_why/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Supercomputing for AI
+              <img src="_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">The lesson</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supercomputer_why/">What is a supercomputer and how is it different from cloud?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connect_to_cluster/">Connecting to a HPC resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders_and_transfer/">Move between folders, ls, transferring to/from local storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_modules/">Available software and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sbatch_singularity/">Queueing jobs and running a Singularity container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="further_resources/">Further resources</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick-reference/">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide/">Instructor’s guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Supercomputing for AI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction to supercomputing for AI</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/supercomputing4ai/blob/main/content/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction-to-supercomputing-for-ai">
+<h1>Introduction to supercomputing for AI<a class="headerlink" href="#introduction-to-supercomputing-for-ai" title="Link to this heading"></a></h1>
+<p>High performance computing (HPC) resources can be used to accelerate AI workflows. The EuroHPC Joint Undertaking (JU) offers
+free access to such resources to SMEs as well as larger companies. In this hands-on, you will learn:</p>
+<ul class="simple">
+<li><p>What is an HPC resource and how it is different from a cloud environment;</p></li>
+<li><p>How to connect to a cluster and explore resources;</p></li>
+<li><p>How to load necessary software and how workloads are managed;</p></li>
+<li><p>How to run a demo AI workflow based on Singularity.</p></li>
+</ul>
+<div class="admonition-prerequisites prerequisites admonition" id="prerequisites-0">
+<p class="admonition-title">Prerequisites</p>
+<p>You will need to have credentials to access the <a class="reference external" href="https://pdc.kth.se/">PDC</a> cluster. A working SSH client is needed:
+it is included on macOS and most Linux flavours; it is also available on Windows in the Powershell or under the <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a>.</p>
+</div>
+<section id="who-is-the-course-for">
+<h2>Who is the course for?<a class="headerlink" href="#who-is-the-course-for" title="Link to this heading"></a></h2>
+<p>This course is intended for data scientists that want to take advantage of higher computing power to perform their workflows.
+Some degree of familiarity with a command-line shell is recommended, but no expertise is required. No previous knowledge of
+supercomputing environments is required.</p>
+</section>
+<section id="about-the-course">
+<h2>About the course<a class="headerlink" href="#about-the-course" title="Link to this heading"></a></h2>
+<p>We will train a Unet model to be able to recognise water in satellite pictures. The source data comes from the Sentinel-2 satellite.
+Let us take the following picture for example:</p>
+<a class="reference internal image-reference" href="_images/water_body_3.jpg"><img alt="_images/water_body_3.jpg" src="_images/water_body_3.jpg" style="width: 49%;" /></a>
+<a class="reference internal image-reference" href="_images/water_body_3_mask.jpg"><img alt="_images/water_body_3_mask.jpg" src="_images/water_body_3_mask.jpg" style="width: 49%;" /></a>
+<p>The left panel shows the original image from Sentinel-2, whereas the right one was manually masked to highlight water regions.</p>
+<p>The objective is to train a Unet model to perform this automatically.
+The source code can be found at <a class="reference external" href="https://github.com/ENCCS/supercomputing4ai_demo.git">this</a>
+repo. The example is based on Tensorflow and will be run using <a class="reference external" href="https://docs.sylabs.io/guides/3.5/user-guide/introduction.html">Singularity</a>.
+The structure of the example is the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>./supercomputing4ai_demo
+├── build_singularity.def
+├── images
+│   └── generated-images
+├── models
+│   ├── serving
+│   │   └── main.py
+│   └── unet
+│       ├── data
+│       │   └── water
+│       │       ├── Images
+│       │       └── Masks
+│       ├── main.py
+│       └── result
+│           ├── models
+│           └── training
+└── README.md
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">models</span></code> subfolder contains the model to be trained (<code class="docutils literal notranslate"><span class="pre">unet</span></code>) and the inference code (<code class="docutils literal notranslate"><span class="pre">serving</span></code>). Under <code class="docutils literal notranslate"><span class="pre">data</span></code>, the training
+dataset can be found, with the <code class="docutils literal notranslate"><span class="pre">Images</span></code> being some satellite images and <code class="docutils literal notranslate"><span class="pre">Masks</span></code> being the water-covered areas in those images. Upon
+running <code class="docutils literal notranslate"><span class="pre">main.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">unet</span></code> folder, a Unet will be trained, producing a set of weights in the <code class="docutils literal notranslate"><span class="pre">models/</span></code> subfolder and training
+statistics (binary cross-entropy loss and accuracy). Inference is then performed with the <code class="docutils literal notranslate"><span class="pre">models/serving/main.py</span></code> script, which takes
+as an input an image and generates a mask of the water parts.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">The lesson</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="supercomputer_why/">What is a supercomputer and how is it different from cloud?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connect_to_cluster/">Connecting to a HPC resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders_and_transfer/">Move between folders, ls, transferring to/from local storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_modules/">Available software and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sbatch_singularity/">Queueing jobs and running a Singularity container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="further_resources/">Further resources</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick-reference/">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide/">Instructor’s guide</a></li>
+</ul>
+</div>
+</section>
+<section id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h2>
+<p>Further introductory material can be found on the <a class="reference external" href="https://lumi-supercomputer.github.io/lumi-self-learning/">Introduction to LUMI</a> and
+<a class="reference external" href="https://carpentries-incubator.github.io/hpc-intro/">HPC carpentry</a> pages.</p>
+</section>
+<section id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Link to this heading"></a></h2>
+<p>The lesson file structure and browsing layout is inspired by and derived from
+<a class="reference external" href="https://github.com/coderefinery/sphinx-lesson">work</a> by <a class="reference external" href="https://coderefinery.org/">CodeRefinery</a> licensed under the <a class="reference external" href="http://opensource.org/licenses/mit-license.html">MIT license</a>. We have copied and adapted
+most of their license text.</p>
+<section id="instructional-material">
+<h3>Instructional Material<a class="headerlink" href="#instructional-material" title="Link to this heading"></a></h3>
+<p>This instructional material is made available under the
+<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY-4.0)</a>.
+The following is a human-readable summary of (and not a substitute for) the
+<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/legalcode">full legal text of the CC-BY-4.0 license</a>.
+You are free to:</p>
+<ul class="simple">
+<li><p><strong>share</strong> - copy and redistribute the material in any medium or format</p></li>
+<li><p><strong>adapt</strong> - remix, transform, and build upon the material for any purpose,
+even commercially.</p></li>
+</ul>
+<p>The licensor cannot revoke these freedoms as long as you follow these license terms:</p>
+<ul class="simple">
+<li><p><strong>Attribution</strong> - You must give appropriate credit (mentioning that your work
+is derived from work that is Copyright (c) ENCCS and individual contributors and, where practical, linking
+to <a class="reference external" href="https://enccs.github.io/sphinx-lesson-template">https://enccs.github.io/sphinx-lesson-template</a>), provide a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">link to the license</a>, and indicate if changes were
+made. You may do so in any reasonable manner, but not in any way that suggests
+the licensor endorses you or your use.</p></li>
+<li><p><strong>No additional restrictions</strong> - You may not apply legal terms or
+technological measures that legally restrict others from doing anything the
+license permits.</p></li>
+</ul>
+<p>With the understanding that:</p>
+<ul class="simple">
+<li><p>You do not have to comply with the license for elements of the material in
+the public domain or where your use is permitted by an applicable exception
+or limitation.</p></li>
+<li><p>No warranties are given. The license may not give you all of the permissions
+necessary for your intended use. For example, other rights such as
+publicity, privacy, or moral rights may limit how you use the material.</p></li>
+</ul>
+</section>
+<section id="software">
+<h3>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h3>
+<p>Except where otherwise noted, the example programs and other software provided
+with this repository are made available under the <a class="reference external" href="http://opensource.org/">OSI</a>-approved
+<a class="reference external" href="https://opensource.org/licenses/mit-license.html">MIT license</a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="supercomputer_why/" class="btn btn-neutral float-right" title="What is a supercomputer and how is it different from cloud?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
